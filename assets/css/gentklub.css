@@ -82,6 +82,7 @@
 .login {
   background-color: rgba(0, 0, 0, 0.4);
   display: table-cell;
+  height: 100vh;
   padding: 50px;
   vertical-align: middle;
   width: 50%;
@@ -98,7 +99,7 @@
   }
 }
 
-/* line 18, ../../../components/app/login/_login.scss */
+/* line 19, ../../../components/app/login/_login.scss */
 .login-form-container {
   box-sizing: border-box;
   margin: 0 0 15px;
@@ -106,36 +107,36 @@
   width: 100%;
 }
 @media screen and (max-width: 768px) {
-  /* line 18, ../../../components/app/login/_login.scss */
+  /* line 19, ../../../components/app/login/_login.scss */
   .login-form-container {
     display: inline-block;
     max-width: 300px;
   }
 }
 
-/* line 30, ../../../components/app/login/_login.scss */
+/* line 31, ../../../components/app/login/_login.scss */
 .login-heading {
   font-style: italic;
 }
 @media screen and (max-width: 768px) {
-  /* line 30, ../../../components/app/login/_login.scss */
+  /* line 31, ../../../components/app/login/_login.scss */
   .login-heading {
     text-align: center;
   }
 }
 @media screen and (max-width: 360px) {
-  /* line 30, ../../../components/app/login/_login.scss */
+  /* line 31, ../../../components/app/login/_login.scss */
   .login-heading {
     display: none;
   }
 }
 
-/* line 42, ../../../components/app/login/_login.scss */
+/* line 43, ../../../components/app/login/_login.scss */
 .login-form {
   width: 100%;
 }
 
-/* line 46, ../../../components/app/login/_login.scss */
+/* line 47, ../../../components/app/login/_login.scss */
 .login-input-label {
   color: #fff;
   font-size: 2rem;
@@ -143,7 +144,7 @@
   width: 100%;
 }
 @media screen and (max-width: 768px) {
-  /* line 46, ../../../components/app/login/_login.scss */
+  /* line 47, ../../../components/app/login/_login.scss */
   .login-input-label {
     display: block;
     font-size: 1.2rem;
@@ -152,7 +153,7 @@
   }
 }
 
-/* line 60, ../../../components/app/login/_login.scss */
+/* line 61, ../../../components/app/login/_login.scss */
 .login-input {
   border: 0;
   box-sizing: border-box;
@@ -163,24 +164,24 @@
   padding: 0 5px 2px;
   width: 100%;
 }
-/* line 70, ../../../components/app/login/_login.scss */
+/* line 71, ../../../components/app/login/_login.scss */
 .login-input:focus {
   outline: #00a651 solid 2px;
   outline-offset: 0;
 }
 
-/* line 76, ../../../components/app/login/_login.scss */
+/* line 77, ../../../components/app/login/_login.scss */
 .login-input-username {
   margin-bottom: 30px;
 }
 @media screen and (max-width: 360px) {
-  /* line 76, ../../../components/app/login/_login.scss */
+  /* line 77, ../../../components/app/login/_login.scss */
   .login-input-username {
     margin-bottom: 15px;
   }
 }
 
-/* line 84, ../../../components/app/login/_login.scss */
+/* line 85, ../../../components/app/login/_login.scss */
 .login-button {
   border: 0;
   margin-top: 40px;
@@ -197,13 +198,14 @@ html {
 
 /* line 10, ../../../components/app/common/_common.scss */
 body {
+  height: 100%;
   margin: 0;
-  min-height: 100%;
   padding: 0;
+  position: absolute;
   width: 100%;
 }
 
-/* line 17, ../../../components/app/common/_common.scss */
+/* line 18, ../../../components/app/common/_common.scss */
 .body-login {
   background-attachment: fixed;
   background-image: url("../../img/bg_login.jpg");
@@ -212,40 +214,63 @@ body {
   background-size: cover;
 }
 
-/* line 25, ../../../components/app/common/_common.scss */
+/* line 26, ../../../components/app/common/_common.scss */
 .main-login {
   display: table;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
 }
-@media (max-width: 769px) {
-  /* line 25, ../../../components/app/common/_common.scss */
+@media (max-width: 768px) {
+  /* line 26, ../../../components/app/common/_common.scss */
   .main-login {
     background-color: rgba(0, 0, 0, 0.4);
     display: block;
-    min-height: 100vh;
+    min-height: 100%;
   }
 }
 
-/* line 37, ../../../components/app/common/_common.scss */
+/* line 38, ../../../components/app/common/_common.scss */
 .body-content {
+  background-color: #f2f2f2;
   box-sizing: border-box;
-  padding: 50px;
+  padding: 20px 40px;
   position: absolute;
   top: 0;
 }
-
-/* line 44, ../../../components/app/common/_common.scss */
-.main-content {
-  background-color: #f2f2f2;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  height: 100%;
-  margin: 0 auto;
-  max-width: 1000px;
-  width: 100%;
+@media (max-width: 1200px) {
+  /* line 38, ../../../components/app/common/_common.scss */
+  .body-content {
+    padding: 0;
+  }
 }
 
-/* line 53, ../../../components/app/common/_common.scss */
+/* line 50, ../../../components/app/common/_common.scss */
+.main-content {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.23);
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  overflow: hidden;
+  width: 100%;
+}
+@media (max-width: 1280px) {
+  /* line 50, ../../../components/app/common/_common.scss */
+  .main-content {
+    max-width: 1120px;
+  }
+}
+@media (max-width: 1200px) {
+  /* line 50, ../../../components/app/common/_common.scss */
+  .main-content {
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 1200px;
+  }
+}
+
+/* line 71, ../../../components/app/common/_common.scss */
 .heading {
   color: #fff;
   font-size: 3rem;
@@ -255,11 +280,56 @@ body {
   padding-top: 0;
 }
 @media (max-width: 768px) {
-  /* line 53, ../../../components/app/common/_common.scss */
+  /* line 71, ../../../components/app/common/_common.scss */
   .heading {
     font-size: 2rem;
     line-height: 2.1rem;
   }
+}
+
+/* line 1, ../../../components/app/navigation/_navigation.scss */
+.navigation {
+  background-color: #00a651;
+  box-sizing: border-box;
+  height: 70px;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+/* line 9, ../../../components/app/navigation/_navigation.scss */
+.avatar {
+  border-radius: 50%;
+  height: 50px;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* line 16, ../../../components/app/navigation/_navigation.scss */
+.avatar-nav {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 23, ../../../components/app/navigation/_navigation.scss */
+.nav-user {
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-block;
+  margin: -2px 0 0;
+  padding: 0 5px;
+}
+/* line 30, ../../../components/app/navigation/_navigation.scss */
+.nav-user p {
+  font-size: 28px;
+  line-height: 28px;
+  margin: 0;
+  padding: 0;
+}
+/* line 36, ../../../components/app/navigation/_navigation.scss */
+.nav-user p .subline {
+  font-size: 22px;
 }
 
 /*# sourceMappingURL=gentklub.css.map */

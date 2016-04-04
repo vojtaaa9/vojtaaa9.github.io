@@ -68,6 +68,7 @@ requirejs.config({
 	'baseUrl': './',
 	'paths': {
 		//{{app}}
+    'navigation': 'app/navigation/navigation',
     'content': 'app/content/content',
 
 		//{{libs}}
