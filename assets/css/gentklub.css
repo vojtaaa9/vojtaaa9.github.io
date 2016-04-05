@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Old+Standard+TT);
+@import url(https://fonts.googleapis.com/css?family=Gentium+Basic:400,400italic);
 /* line 1, ../../../components/app/logo/_logo.scss */
 .logo-container {
   display: table-cell;
@@ -82,7 +82,7 @@
 .login {
   background-color: rgba(0, 0, 0, 0.4);
   display: table-cell;
-  height: 100vh;
+  max-height: 100%;
   padding: 50px;
   vertical-align: middle;
   width: 50%;
@@ -157,7 +157,7 @@
 .login-input {
   border: 0;
   box-sizing: border-box;
-  font-family: Old Standard TT, serif;
+  font-family: 'Gentium Basic', serif;
   font-size: 1.4rem;
   height: 40px;
   margin: 5px 0;
@@ -190,7 +190,7 @@
 
 /* line 3, ../../../components/app/common/_common.scss */
 html {
-  font-family: Old Standard TT, serif;
+  font-family: 'Gentium Basic', serif;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -217,7 +217,7 @@ body {
 /* line 26, ../../../components/app/common/_common.scss */
 .main-login {
   display: table;
-  min-height: 100vh;
+  height: 100%;
   width: 100%;
 }
 @media (max-width: 768px) {
