@@ -20,20 +20,93 @@ e=n.propHooks[b]),void 0!==c?e&&"set"in e&&void 0!==(d=e.set(a,c,b))?d:a[b]=c:e&
 define("jquery.exists", ["jquery"], function(){});
 
 /**
+ * Login Validation
+ * @module Login
+ * @requires jquery
+ * @requires jquery.exists
+ * @author pesek@webit.de
+ */
+define('login',['jquery', 'jquery.exists'], function($, exists) {
+
+  'use strict';
+
+  var Login = {
+
+    /**
+     * Caches all jQuery Objects for later use.
+     * @function _cacheElements
+     * @private
+     */
+    _cacheElements: function() {
+      this.$login = $('.login');
+      this.$form = $('.login-form');
+      this.$input_user = $('.login-input-username');
+      this.$input_pass = $('.login-input-password');
+
+      this.$error = $('.login-error');
+    },
+
+    /**
+     * Initiates the module.
+     * @function init
+     * @public
+     */
+    init: function() {
+      Login._cacheElements();
+
+      Login._bindEvents();
+    },
+
+    /**
+     * Binds all events to jQuery DOM objects.
+     * @function _bindEvents
+     * @private
+     */
+    _bindEvents: function() {
+      Login.$form.on('submit', function(event) {
+        event.preventDefault();
+        Login._validate();
+      });
+    },
+
+    _validate: function() {
+      var user = Login.$input_user.val();
+      var pass = Login.$input_pass.val();
+      if(user == 'admin' && pass == '1234') {
+          window.location.href = '/main.html';
+      } else {
+        Login.$error.slideDown(300);
+        Login.$input_user.val('');
+        Login.$input_pass.val('');
+        Login.$input_user.focus();
+      }
+    }
+
+  };
+
+  return /** @alias module:Login */ {
+    /** init */
+    init: Login.init
+  };
+
+});
+
+/**
  * Main entry point into all Java Script.
  * @module Main
  * @requires jquery
 
  * @requires jquery.exists
- * @author TODO: add author
+ * @author pesek@webit.de
  */
 require([
   'jquery',
-  'jquery.exists'
+  'jquery.exists',
+  'login'
 ], function(
   $,
-
-  exists
+  exists,
+  Login
 ) {
 
   'use strict';
@@ -54,6 +127,7 @@ require([
      */
     init: function() {
       this.cacheElements();
+      Login.init();
     }
   };
 
@@ -68,6 +142,7 @@ requirejs.config({
 	'baseUrl': './',
 	'paths': {
 		//{{app}}
+    'login': 'app/login/login',
     'navigation': 'app/navigation/navigation',
     'content': 'app/content/content',
 

@@ -32,13 +32,15 @@
 
       <div class="login">
   <div class="login-form-container">
-    <h1 class="heading login-heading">Gentleman's<br>are not dead yet!</h1>
-    <form class="login-form" action="/main.html">
+    <h1 class="heading login-heading">Gentlemani<br>ještě nevymřeli!</h1>
+    <form class="login-form" action="" method="post">
+      <div class="login-error login-password-error">Přihlašovací údaje jsou špatně!</div>
       <label class="login-input-label login-input-label-username" for="login-username">Gentleman</label>
-      <input class="login-input login-input-username" type="text" id="login-username">
+      <input class="login-input login-input-username" name="username" type="text" id="login-username" required>
       <label class="login-input-label login-input-label-password" for="login-password">Password</label>
-      <input class="login-input login-input-password" type="password" id="login-password">
-      <button class="button login-button" type="submit">LOGIN</button>
+      <input class="login-input login-input-password" name="password" type="password" id="login-password" required>
+      <a href="#" class="login-link login-forgot">Zapomenuté heslo</a>
+      <button class="button login-button" type="submit">Vstoupit</button>
     </form>
   </div>
 </div> <!-- login -->

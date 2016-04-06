@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Gentium+Basic:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700italic,700);
 /* line 1, ../../../components/app/logo/_logo.scss */
 .logo-container {
   display: table-cell;
@@ -52,6 +52,7 @@
 .button {
   background-color: #00a651;
   border: 0;
+  border-radius: 3px;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
@@ -139,7 +140,7 @@
 /* line 47, ../../../components/app/login/_login.scss */
 .login-input-label {
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin-bottom: 10px;
   width: 100%;
 }
@@ -155,42 +156,84 @@
 
 /* line 61, ../../../components/app/login/_login.scss */
 .login-input {
-  border: 0;
+  border: #fff solid 2px;
+  border-radius: 3px;
   box-sizing: border-box;
-  font-family: 'Gentium Basic', serif;
+  font-family: 'Lora', serif;
   font-size: 1.4rem;
   height: 40px;
   margin: 5px 0;
+  overflow: hidden;
   padding: 0 5px 2px;
   width: 100%;
 }
-/* line 71, ../../../components/app/login/_login.scss */
+/* line 73, ../../../components/app/login/_login.scss */
 .login-input:focus {
-  outline: #00a651 solid 2px;
+  border: #00a651 solid 2px;
+  outline: 0;
   outline-offset: 0;
 }
+/* line 78, ../../../components/app/login/_login.scss */
+.login-input:focus:invalid {
+  border: #e30613 solid 2px;
+}
+/* line 83, ../../../components/app/login/_login.scss */
+.login-input:invalid {
+  box-shadow: none;
+}
 
-/* line 77, ../../../components/app/login/_login.scss */
+/* line 88, ../../../components/app/login/_login.scss */
 .login-input-username {
   margin-bottom: 30px;
 }
 @media screen and (max-width: 360px) {
-  /* line 77, ../../../components/app/login/_login.scss */
+  /* line 88, ../../../components/app/login/_login.scss */
   .login-input-username {
     margin-bottom: 15px;
   }
 }
 
-/* line 85, ../../../components/app/login/_login.scss */
+/* line 96, ../../../components/app/login/_login.scss */
+.login-link {
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+}
+/* line 101, ../../../components/app/login/_login.scss */
+.login-link:hover, .login-linkfocus {
+  color: #00d96a;
+  text-decoration: underline;
+}
+
+/* line 108, ../../../components/app/login/_login.scss */
+.login-forgot {
+  box-sizing: border-box;
+  margin-top: 40px;
+}
+
+/* line 113, ../../../components/app/login/_login.scss */
 .login-button {
   border: 0;
-  margin-top: 40px;
-  width: 100%;
+  clear: both;
+  float: right;
+  margin-top: 30px;
+  width: 130px;
+}
+
+/* line 121, ../../../components/app/login/_login.scss */
+.login-error {
+  background-color: #e30613;
+  border-radius: 3px;
+  color: #fff;
+  display: none;
+  margin-bottom: 10px;
+  padding: 10px 0;
+  text-align: center;
 }
 
 /* line 3, ../../../components/app/common/_common.scss */
 html {
-  font-family: 'Gentium Basic', serif;
+  font-family: 'Lora', serif;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -224,12 +267,11 @@ body {
   /* line 26, ../../../components/app/common/_common.scss */
   .main-login {
     background-color: rgba(0, 0, 0, 0.4);
-    display: block;
     min-height: 100%;
   }
 }
 
-/* line 38, ../../../components/app/common/_common.scss */
+/* line 37, ../../../components/app/common/_common.scss */
 .body-content {
   background-color: #f2f2f2;
   box-sizing: border-box;
@@ -238,13 +280,13 @@ body {
   top: 0;
 }
 @media (max-width: 1200px) {
-  /* line 38, ../../../components/app/common/_common.scss */
+  /* line 37, ../../../components/app/common/_common.scss */
   .body-content {
     padding: 0;
   }
 }
 
-/* line 50, ../../../components/app/common/_common.scss */
+/* line 49, ../../../components/app/common/_common.scss */
 .main-content {
   background-color: #fff;
   border-radius: 3px;
@@ -256,13 +298,13 @@ body {
   width: 100%;
 }
 @media (max-width: 1280px) {
-  /* line 50, ../../../components/app/common/_common.scss */
+  /* line 49, ../../../components/app/common/_common.scss */
   .main-content {
     max-width: 1120px;
   }
 }
 @media (max-width: 1200px) {
-  /* line 50, ../../../components/app/common/_common.scss */
+  /* line 49, ../../../components/app/common/_common.scss */
   .main-content {
     border-radius: 0;
     box-shadow: none;
@@ -270,7 +312,7 @@ body {
   }
 }
 
-/* line 71, ../../../components/app/common/_common.scss */
+/* line 70, ../../../components/app/common/_common.scss */
 .heading {
   color: #fff;
   font-size: 3rem;
@@ -280,7 +322,7 @@ body {
   padding-top: 0;
 }
 @media (max-width: 768px) {
-  /* line 71, ../../../components/app/common/_common.scss */
+  /* line 70, ../../../components/app/common/_common.scss */
   .heading {
     font-size: 2rem;
     line-height: 2.1rem;
