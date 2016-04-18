@@ -36,6 +36,10 @@
 
 /* line 1, ../../../components/app/button/_button.scss */
 .button {
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
   background-color: #00a651;
   border: 0;
   border-radius: 3px;
@@ -54,11 +58,11 @@
   user-select: none;
   vertical-align: top;
 }
-/* line 20, ../../../components/app/button/_button.scss */
+/* line 21, ../../../components/app/button/_button.scss */
 .button:hover, .button:focus {
   background-color: #007338;
 }
-/* line 25, ../../../components/app/button/_button.scss */
+/* line 26, ../../../components/app/button/_button.scss */
 .button:active {
   outline: none;
   padding: 0 6px;
@@ -316,6 +320,24 @@ body {
   }
 }
 
+/* line 83, ../../../components/app/common/_common.scss */
+.link {
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+  color: #000;
+  text-decoration: none;
+}
+/* line 88, ../../../components/app/common/_common.scss */
+.link:visited {
+  color: #000;
+}
+/* line 92, ../../../components/app/common/_common.scss */
+.link:hover, .link:focus {
+  color: #00a651;
+}
+
 /* line 1, ../../../components/app/navigation/_navigation.scss */
 .navigation {
   background-color: #00a651;
@@ -350,30 +372,80 @@ body {
 /* line 26, ../../../components/app/navigation/_navigation.scss */
 .avatar-nav {
   box-sizing: border-box;
+  display: inline-block;
   margin: 0;
   padding: 0;
+  vertical-align: top;
 }
 
-/* line 32, ../../../components/app/navigation/_navigation.scss */
+/* line 34, ../../../components/app/navigation/_navigation.scss */
 .nav-user {
   box-sizing: border-box;
   color: #fff;
   display: inline-block;
-  margin: -.4rem 0 0;
-  padding: 0 .5rem;
+  padding: 0 1rem;
+  vertical-align: top;
 }
 
-/* line 40, ../../../components/app/navigation/_navigation.scss */
+/* line 42, ../../../components/app/navigation/_navigation.scss */
 .user-name {
   font-size: 2.3rem;
   margin: 0;
   margin-bottom: .2rem;
 }
 
-/* line 46, ../../../components/app/navigation/_navigation.scss */
+/* line 48, ../../../components/app/navigation/_navigation.scss */
 .user-rank {
   font-size: 1.5rem;
   margin: 0;
+}
+
+/* line 53, ../../../components/app/navigation/_navigation.scss */
+.nav-more {
+  float: right;
+  position: relative;
+}
+
+/* line 58, ../../../components/app/navigation/_navigation.scss */
+.nav-button {
+  background-image: url("/assets/img/ic_more.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 3rem;
+  border-radius: 50%;
+  height: 5rem;
+  outline: none;
+  overflow: hidden;
+  text-align: left;
+  text-indent: -9999px;
+  white-space: nowrap;
+  width: 5rem;
+}
+
+/* line 73, ../../../components/app/navigation/_navigation.scss */
+.nav-menu {
+  background-color: #f2f2f2;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.23);
+  display: none;
+  height: auto;
+  padding: 1rem;
+  position: absolute;
+  right: 1rem;
+  top: 5.5rem;
+}
+
+/* line 85, ../../../components/app/navigation/_navigation.scss */
+.menu-ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 90, ../../../components/app/navigation/_navigation.scss */
+.menu-item {
+  display: block;
+  font-size: 1.5rem;
+  padding: 2px 0;
 }
 
 /*# sourceMappingURL=gentklub.css.map */

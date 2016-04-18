@@ -92,6 +92,63 @@ define('login',['jquery', 'jquery.exists'], function($, exists) {
 });
 
 /**
+ * Handles interaction for Navigation
+ * @module Navigation
+ * @requires jquery
+ * @requires jquery.exists
+ * @author pesek@webit.de
+ */
+define('navigation',['jquery', 'jquery.exists'], function($, exists) {
+
+  'use strict';
+
+  var Navigation = {
+
+    /**
+     * Caches all jQuery Objects for later use.
+     * @function _cacheElements
+     * @private
+     */
+    _cacheElements: function() {
+      this.$navigation = $('.navigation');
+      this.$moreOpen = $('.nav-button');
+      this.$moreMenu = $('.nav-menu');
+    },
+
+    /**
+     * Initiates the module.
+     * @function init
+     * @public
+     */
+    init: function() {
+      Navigation._cacheElements();
+
+      Navigation.$navigation.exists(function() {
+        Navigation._bindEvents();
+      });
+    },
+
+    /**
+     * Binds all events to jQuery DOM objects.
+     * @function _bindEvents
+     * @private
+     */
+    _bindEvents: function() {
+      Navigation.$moreOpen.on('click', function() {
+        Navigation.$moreMenu.fadeToggle();
+      });
+    }
+
+  };
+
+  return /** @alias module:Navigation */ {
+    /** init */
+    init: Navigation.init
+  };
+
+});
+
+/**
  * Main entry point into all Java Script.
  * @module Main
  * @requires jquery
@@ -102,11 +159,13 @@ define('login',['jquery', 'jquery.exists'], function($, exists) {
 require([
   'jquery',
   'jquery.exists',
-  'login'
+  'login',
+  'navigation'
 ], function(
   $,
   exists,
-  Login
+  Login,
+  Navigation
 ) {
 
   'use strict';
@@ -128,6 +187,7 @@ require([
     init: function() {
       this.cacheElements();
       Login.init();
+      Navigation.init();
     }
   };
 
