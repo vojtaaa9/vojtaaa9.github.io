@@ -34,13 +34,27 @@
   <div class="login-form-container">
     <h1 class="heading login-heading">Gentlemani<br>ještě nevymřeli!</h1>
     <form class="login-form" action="" method="post">
-      <div class="login-error login-password-error">Přihlašovací údaje jsou špatně!</div>
-      <label class="login-input-label login-input-label-username" for="login-username">Gentleman</label>
+      <div class="login-message message-error login-password-error">Přihlašovací údaje jsou špatně!</div>
+
+      <label class="login-input-label" for="login-username">Gentleman</label>
       <input class="login-input login-input-username" name="username" type="text" id="login-username" required>
-      <label class="login-input-label login-input-label-password" for="login-password">Password</label>
+
+      <label class="login-input-label" for="login-password">Password</label>
       <input class="login-input login-input-password" name="password" type="password" id="login-password" required>
-      <a href="#" class="login-link login-forgot">Zapomenuté heslo</a>
-      <button class="button login-button" type="submit">Vstoupit</button>
+
+      <a class="login-link link-forgot login-forgot">Zapomenuté heslo</a>
+      <button class="button form-button login-button" type="submit">Vstoupit</button>
+    </form>
+    <form class="reset-form" action="" method="post">
+
+      <div class="login-message message-error reset-error">Neplatný email!</div>
+      <div class="login-message message-succes reset-succes">Byl ti poslán email s odkazem!</div>
+
+      <label class="login-input-label" for="resetpass">Email gentlemana</label>
+      <input class="login-input input-resetpass" name="resetpass" type="text" id="resetpass" required>
+
+      <a class="login-link link-forgot reset-return">Přihlásit se</a>
+      <button class="button form-button" type="submit">Resetovat</button>
     </form>
   </div>
 </div> <!-- login -->

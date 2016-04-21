@@ -130,7 +130,7 @@
 /* line 47, ../../../components/app/login/_login.scss */
 .login-input-label {
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 10px;
   width: 100%;
 }
@@ -187,40 +187,56 @@
 /* line 97, ../../../components/app/login/_login.scss */
 .login-link {
   color: #fff;
+  cursor: pointer;
   display: inline-block;
   text-decoration: none;
 }
-/* line 102, ../../../components/app/login/_login.scss */
+/* line 103, ../../../components/app/login/_login.scss */
 .login-link:hover, .login-linkfocus {
   color: #00d96a;
   text-decoration: underline;
 }
 
-/* line 109, ../../../components/app/login/_login.scss */
-.login-forgot {
+/* line 110, ../../../components/app/login/_login.scss */
+.link-forgot {
   box-sizing: border-box;
   float: left;
   font-size: 1.4rem;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
-/* line 116, ../../../components/app/login/_login.scss */
-.login-button {
+/* line 117, ../../../components/app/login/_login.scss */
+.form-button {
   border: 0;
   float: right;
-  margin-top: 30px;
+  margin-top: 20px;
   width: 130px;
 }
 
-/* line 123, ../../../components/app/login/_login.scss */
-.login-error {
-  background-color: #e30613;
+/* line 124, ../../../components/app/login/_login.scss */
+.login-message {
   border-radius: 3px;
   color: #fff;
   display: none;
-  margin-bottom: 10px;
+  font-size: 1.4rem;
+  margin: 20px 0;
   padding: 10px 0;
   text-align: center;
+}
+
+/* line 134, ../../../components/app/login/_login.scss */
+.message-error {
+  background-color: #e30613;
+}
+
+/* line 138, ../../../components/app/login/_login.scss */
+.message-succes {
+  background-color: #00a651;
+}
+
+/* line 142, ../../../components/app/login/_login.scss */
+.reset-form {
+  display: none;
 }
 
 /* line 3, ../../../components/app/common/_common.scss */
@@ -445,7 +461,7 @@ body {
 .menu-item {
   display: block;
   font-size: 1.5rem;
-  padding: 2px 0;
+  padding: 2px 7px;
 }
 
 /*# sourceMappingURL=gentklub.css.map */

@@ -39,11 +39,16 @@ define('login',['jquery', 'jquery.exists'], function($, exists) {
      */
     _cacheElements: function() {
       this.$login = $('.login');
-      this.$form = $('.login-form');
+      this.$login_form = $('.login-form');
       this.$input_user = $('.login-input-username');
       this.$input_pass = $('.login-input-password');
-
-      this.$error = $('.login-error');
+      this.$login_error = $('.login-password-error');
+      this.$login_forgot = $('.login-forgot');
+      this.$reset_form = $('.reset-form');
+      this.$input_reset = $('.input-resetpass');
+      this.$reset_back = $('.reset-return');
+      this.$reset_error = $('.reset-error');
+      this.$reset_succes = $('.reset-succes');
     },
 
     /**
@@ -53,7 +58,6 @@ define('login',['jquery', 'jquery.exists'], function($, exists) {
      */
     init: function() {
       Login._cacheElements();
-
       Login._bindEvents();
     },
 
@@ -63,9 +67,38 @@ define('login',['jquery', 'jquery.exists'], function($, exists) {
      * @private
      */
     _bindEvents: function() {
-      Login.$form.on('submit', function(event) {
+      // Binds login form
+      Login.$login_form.on('submit', function(event) {
         event.preventDefault();
         Login._validate();
+      });
+
+      // Switch to reset form
+      Login.$login_forgot.click(function() {
+        Login.$login_form.hide();
+        Login.$reset_form.fadeIn();
+      });
+
+      // Switch to login form
+      Login.$reset_back.click(function() {
+        Login.$reset_form.hide();
+        Login.$login_form.fadeIn();
+      });
+
+      // Binds Reset pass form
+      Login.$reset_form.on('submit', function(event) {
+        event.preventDefault();
+        var mail = Login.$input_reset.val();
+        if(mail != 'vojtaaa9@gmail.com') {
+          Login.$reset_error.slideDown(300);
+          Login.$input_reset.focus();
+        }
+        else {
+          if(Login.$reset_error.css('display') != 'none') {
+            Login.$reset_error.slideUp(300);
+          }
+          Login.$reset_succes.slideDown(300);
+        }
       });
     },
 
@@ -75,8 +108,7 @@ define('login',['jquery', 'jquery.exists'], function($, exists) {
       if(user == 'admin' && pass == '1234') {
           window.location.href = '/main.html';
       } else {
-        Login.$error.slideDown(300);
-        Login.$input_user.val('');
+        Login.$login_error.slideDown(300);
         Login.$input_pass.val('');
         Login.$input_user.focus();
       }
