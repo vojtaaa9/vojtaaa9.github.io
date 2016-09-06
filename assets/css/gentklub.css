@@ -40,7 +40,7 @@
   -o-transition: background-color 0.2s;
   -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
-  background-color: #00a651;
+  background-color: #0aa453;
   border: 0;
   border-radius: 3px;
   box-sizing: border-box;
@@ -60,7 +60,7 @@
 }
 /* line 21, ../../../components/app/button/_button.scss */
 .button:hover, .button:focus {
-  background-color: #007338;
+  background-color: #066a36;
 }
 /* line 26, ../../../components/app/button/_button.scss */
 .button:active {
@@ -84,7 +84,7 @@
     background-color: transparent;
     box-sizing: border-box;
     display: block;
-    padding: 10px 30px 0;
+    padding: 30px 20px;
     text-align: center;
     width: 100%;
   }
@@ -160,13 +160,13 @@
 }
 /* line 74, ../../../components/app/login/_login.scss */
 .login-input:focus {
-  border: #00a651 solid 2px;
+  border: #0aa453 solid 2px;
   outline: 0;
   outline-offset: 0;
 }
 /* line 79, ../../../components/app/login/_login.scss */
 .login-input:focus:invalid {
-  border: #e30613 solid 2px;
+  border: #ff6961 solid 2px;
 }
 /* line 84, ../../../components/app/login/_login.scss */
 .login-input:invalid {
@@ -193,7 +193,7 @@
 }
 /* line 103, ../../../components/app/login/_login.scss */
 .login-link:hover, .login-linkfocus {
-  color: #00d96a;
+  color: #0dd46b;
   text-decoration: underline;
 }
 
@@ -219,19 +219,19 @@
   color: #fff;
   display: none;
   font-size: 1.4rem;
-  margin: 20px 0;
+  margin-bottom: 20px;
   padding: 10px 0;
   text-align: center;
 }
 
 /* line 134, ../../../components/app/login/_login.scss */
 .message-error {
-  background-color: #e30613;
+  background-color: #ff6961;
 }
 
 /* line 138, ../../../components/app/login/_login.scss */
 .message-succes {
-  background-color: #00a651;
+  background-color: #0aa453;
 }
 
 /* line 142, ../../../components/app/login/_login.scss */
@@ -240,6 +240,11 @@
 }
 
 /* line 3, ../../../components/app/common/_common.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 7, ../../../components/app/common/_common.scss */
 html {
   font-family: 'Merriweather', serif;
   font-size: 62.5%;
@@ -248,16 +253,57 @@ html {
   padding: 0;
 }
 
-/* line 11, ../../../components/app/common/_common.scss */
+/* line 15, ../../../components/app/common/_common.scss */
 body {
   height: 100%;
   margin: 0;
-  padding: 0;
-  position: absolute;
   width: 100%;
 }
 
-/* line 19, ../../../components/app/common/_common.scss */
+/* line 21, ../../../components/app/common/_common.scss */
+main {
+  background-color: #f5f5f5;
+  padding-top: 74px;
+}
+
+/* line 26, ../../../components/app/common/_common.scss */
+.main_content {
+  display: inline-block;
+  float: left;
+  margin: 8px 0;
+  max-width: 800px;
+  width: 100%;
+}
+
+/* line 34, ../../../components/app/common/_common.scss */
+.main-login {
+  display: table;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  background: 0;
+}
+@media (max-width: 768px) {
+  /* line 34, ../../../components/app/common/_common.scss */
+  .main-login {
+    background-color: rgba(0, 0, 0, 0.4);
+    min-height: 100%;
+  }
+}
+
+/* line 47, ../../../components/app/common/_common.scss */
+input,
+textarea {
+  border: 0;
+  font-family: inherit;
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+  transition: 0.3s ease;
+  vertical-align: top;
+}
+
+/* line 58, ../../../components/app/common/_common.scss */
 .body-login {
   background-attachment: fixed;
   background-image: url("../../img/bg_login.jpg");
@@ -266,62 +312,26 @@ body {
   background-size: cover;
 }
 
-/* line 27, ../../../components/app/common/_common.scss */
-.main-login {
-  display: table;
-  height: 100%;
-  width: 100%;
-}
-@media (max-width: 768px) {
-  /* line 27, ../../../components/app/common/_common.scss */
-  .main-login {
-    background-color: rgba(0, 0, 0, 0.4);
-    min-height: 100%;
-  }
-}
-
-/* line 38, ../../../components/app/common/_common.scss */
-.body-content {
-  background-color: #f2f2f2;
-  box-sizing: border-box;
-  padding: 20px 40px;
-  position: absolute;
-  top: 0;
-}
-@media (max-width: 1200px) {
-  /* line 38, ../../../components/app/common/_common.scss */
-  .body-content {
-    padding: 0;
-  }
-}
-
-/* line 50, ../../../components/app/common/_common.scss */
-.main-content {
-  background-color: #fff;
-  border-radius: 3px;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.23);
-  height: 100%;
+/* line 66, ../../../components/app/common/_common.scss */
+.well {
   margin: 0 auto;
-  max-width: 1200px;
-  overflow: hidden;
+  max-width: 1100px;
   width: 100%;
 }
-@media (max-width: 1280px) {
-  /* line 50, ../../../components/app/common/_common.scss */
-  .main-content {
-    max-width: 1120px;
-  }
+/* line 71, ../../../components/app/common/_common.scss */
+.well::after {
+  clear: left;
+  content: '';
+  display: block;
 }
-@media (max-width: 1200px) {
-  /* line 50, ../../../components/app/common/_common.scss */
-  .main-content {
-    border-radius: 0;
-    box-shadow: none;
-    max-width: 1200px;
+@media screen and (max-width: 1120px) {
+  /* line 66, ../../../components/app/common/_common.scss */
+  .well {
+    margin: 0 10px;
   }
 }
 
-/* line 71, ../../../components/app/common/_common.scss */
+/* line 82, ../../../components/app/common/_common.scss */
 .heading {
   color: #fff;
   font-size: 4rem;
@@ -330,13 +340,13 @@ body {
   padding-top: 0;
 }
 @media (max-width: 768px) {
-  /* line 71, ../../../components/app/common/_common.scss */
+  /* line 82, ../../../components/app/common/_common.scss */
   .heading {
     font-size: 3rem;
   }
 }
 
-/* line 83, ../../../components/app/common/_common.scss */
+/* line 94, ../../../components/app/common/_common.scss */
 .link {
   -moz-transition: color 0.2s;
   -o-transition: color 0.2s;
@@ -345,123 +355,559 @@ body {
   color: #000;
   text-decoration: none;
 }
-/* line 88, ../../../components/app/common/_common.scss */
+/* line 99, ../../../components/app/common/_common.scss */
 .link:visited {
   color: #000;
 }
-/* line 92, ../../../components/app/common/_common.scss */
+/* line 103, ../../../components/app/common/_common.scss */
 .link:hover, .link:focus {
-  color: #00a651;
+  color: #0aa453;
 }
 
-/* line 1, ../../../components/app/navigation/_navigation.scss */
-.navigation {
-  background-color: #00a651;
-  box-sizing: border-box;
-  height: 7rem;
-  padding: 1rem;
-  width: 100%;
-}
-@media (max-width: 480px) {
-  /* line 1, ../../../components/app/navigation/_navigation.scss */
-  .navigation {
-    height: 5.6rem;
-    padding: .8rem;
-  }
-}
-
-/* line 14, ../../../components/app/navigation/_navigation.scss */
-.avatar {
-  border-radius: 50%;
-  height: 5rem;
+/* line 109, ../../../components/app/common/_common.scss */
+.sr_only {
   overflow: hidden;
-  width: 5rem;
-}
-@media (max-width: 480px) {
-  /* line 14, ../../../components/app/navigation/_navigation.scss */
-  .avatar {
-    height: 4rem;
-    width: 4rem;
-  }
+  text-indent: -9999px;
+  white-space: nowrap;
 }
 
-/* line 26, ../../../components/app/navigation/_navigation.scss */
-.avatar-nav {
-  box-sizing: border-box;
+/* line 115, ../../../components/app/common/_common.scss */
+.box {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.23);
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+/* line 123, ../../../components/app/common/_common.scss */
+a {
+  border-radius: 4px;
+  color: #212121;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+/* line 129, ../../../components/app/common/_common.scss */
+a:hover, a:focus {
+  color: #066a36;
+  cursor: pointer;
+}
+
+/* line 136, ../../../components/app/common/_common.scss */
+.h2_center {
+  font-size: 2.2rem;
+  text-align: center;
+}
+/* line 140, ../../../components/app/common/_common.scss */
+.h2_center span {
+  border-bottom: 2px solid #066a36;
+}
+
+/* line 3, ../../../components/app/header/_header.scss */
+.fixed_header {
+  background-color: rgba(10, 164, 83, 0.9);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.23);
+  height: 64px;
+  padding: 7px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+}
+/* line 13, ../../../components/app/header/_header.scss */
+.fixed_header img {
   display: inline-block;
   margin: 0;
   padding: 0;
   vertical-align: top;
 }
 
-/* line 34, ../../../components/app/navigation/_navigation.scss */
-.nav-user {
-  box-sizing: border-box;
+/* line 21, ../../../components/app/header/_header.scss */
+.avatar {
+  border-radius: 50%;
+  position: relative;
+  width: 5rem;
+  z-index: -2;
+}
+
+/* line 28, ../../../components/app/header/_header.scss */
+.avatar_shadow {
+  border-radius: 50%;
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  height: 5rem;
+  width: 5rem;
+}
+
+/* line 36, ../../../components/app/header/_header.scss */
+.container_title {
   color: #fff;
   display: inline-block;
   padding: 0 1rem;
   vertical-align: top;
 }
 
-/* line 42, ../../../components/app/navigation/_navigation.scss */
-.user-name {
+/* line 43, ../../../components/app/header/_header.scss */
+.user_name {
   font-size: 2.3rem;
-  margin: 0;
-  margin-bottom: .2rem;
+  margin: 0 0 .3rem;
 }
 
-/* line 48, ../../../components/app/navigation/_navigation.scss */
-.user-rank {
+/* line 48, ../../../components/app/header/_header.scss */
+.user_rank {
   font-size: 1.5rem;
   margin: 0;
 }
 
-/* line 53, ../../../components/app/navigation/_navigation.scss */
-.nav-more {
+/* line 53, ../../../components/app/header/_header.scss */
+.search {
   float: right;
-  position: relative;
+  font-size: 0;
+  margin-top: 10px;
 }
-
-/* line 58, ../../../components/app/navigation/_navigation.scss */
-.nav-button {
-  background-image: url("/assets/img/ic_more.svg");
-  background-position: center;
+/* line 58, ../../../components/app/header/_header.scss */
+.search::after {
+  clear: both;
+  content: '';
+}
+/* line 64, ../../../components/app/header/_header.scss */
+.search input[type='search'] {
+  border-radius: 4px 0 0 4px;
+  height: 31px;
+  padding-left: 10px;
+}
+/* line 70, ../../../components/app/header/_header.scss */
+.search input[type='submit'] {
+  background-color: #fff;
+  background-image: url("../img/1472748406_icon-111-search.svg");
+  background-position: center -1px;
   background-repeat: no-repeat;
-  background-size: 3rem;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  float: right;
+  height: 31px;
+  position: relative;
+  width: 40px;
+}
+/* line 82, ../../../components/app/header/_header.scss */
+.search input[type='submit']:hover, .search input[type='submit']:focus {
+  background-color: #e0e0e0;
+}
+
+/* line 90, ../../../components/app/header/_header.scss */
+.dropdown {
+  background-color: transparent;
+  background-image: url("../img/drop-down-arrow.svg");
+  background-position: center 8px;
+  background-repeat: no-repeat;
+  background-size: 15px;
+  border: 0;
   border-radius: 50%;
-  height: 5rem;
+  float: right;
+  height: 31px;
+  margin-left: 15px;
+  margin-top: 10px;
   outline: none;
-  overflow: hidden;
-  text-align: left;
-  text-indent: -9999px;
-  white-space: nowrap;
-  width: 5rem;
+  transition: 0.3s ease;
+  width: 30px;
+}
+/* line 106, ../../../components/app/header/_header.scss */
+.dropdown:hover, .dropdown:focus {
+  background-color: #066a36;
+  cursor: pointer;
 }
 
-/* line 73, ../../../components/app/navigation/_navigation.scss */
-.nav-menu {
-  background-color: #f2f2f2;
-  border-radius: 3px;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.23);
-  display: none;
-  height: auto;
-  padding: 1rem;
-  position: absolute;
-  right: 1rem;
-  top: 5.5rem;
+/* line 1, ../../../components/app/navigation/_navigation.scss */
+.navigation {
+  display: inline-block;
+  float: left;
+  margin-right: 20px;
+  max-width: 280px;
+  width: 100%;
 }
 
-/* line 85, ../../../components/app/navigation/_navigation.scss */
-.menu-ul {
+/* line 9, ../../../components/app/navigation/_navigation.scss */
+.nav {
   margin: 0;
   padding: 0;
 }
+/* line 13, ../../../components/app/navigation/_navigation.scss */
+.nav li {
+  list-style: none;
+  margin: 6px 0;
+}
+/* line 18, ../../../components/app/navigation/_navigation.scss */
+.nav a {
+  border-radius: 4px;
+  color: #212121;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+/* line 24, ../../../components/app/navigation/_navigation.scss */
+.nav a:hover, .nav a:focus {
+  color: #066a36;
+  cursor: pointer;
+}
 
-/* line 90, ../../../components/app/navigation/_navigation.scss */
-.menu-item {
+/* line 32, ../../../components/app/navigation/_navigation.scss */
+.ico {
+  background-position: 3px center;
+  background-repeat: no-repeat;
+  background-size: 2.2rem;
+  font-size: 2.2rem;
+  padding: 3px;
+  padding-left: 32px;
+}
+/* line 40, ../../../components/app/navigation/_navigation.scss */
+.ico:hover, .ico:focus {
+  background-color: #d6d6d6;
+  color: #066a36;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* line 49, ../../../components/app/navigation/_navigation.scss */
+.ico_home {
+  background-image: url("../img/1472748307_house.svg");
+}
+
+/* line 53, ../../../components/app/navigation/_navigation.scss */
+.ico_members {
+  background-image: url("../img/1472748287_user-group.svg");
+}
+
+/* line 57, ../../../components/app/navigation/_navigation.scss */
+.ico_images {
+  background-image: url("../img/1472748322_image.svg");
+}
+
+/* line 61, ../../../components/app/navigation/_navigation.scss */
+.ico_events {
+  background-image: url("../img/1472748293_calendar.svg");
+}
+
+/* line 65, ../../../components/app/navigation/_navigation.scss */
+.ico_manifesto {
+  background-image: url("../img/1472748372_book.svg");
+}
+
+/* line 69, ../../../components/app/navigation/_navigation.scss */
+.ico_files {
+  background-image: url("../img/1472748330_folder-blue.svg");
+}
+
+/* line 73, ../../../components/app/navigation/_navigation.scss */
+.ico_time {
+  background-image: url("../img/1472748379_clock.svg");
+}
+
+/* line 77, ../../../components/app/navigation/_navigation.scss */
+.ico_settings {
+  background-image: url("../img/1472748346_cog.svg");
+}
+
+/* line 1, ../../../components/app/add-post/_add-post.scss */
+.full_width {
+  width: 100%;
+}
+/* line 4, ../../../components/app/add-post/_add-post.scss */
+.full_width::after {
+  clear: right;
+  content: '';
   display: block;
-  font-size: 1.5rem;
-  padding: 2px 7px;
+}
+
+/* line 11, ../../../components/app/add-post/_add-post.scss */
+.post_text {
+  box-sizing: border-box;
+  min-height: 60px;
+  overflow-x: hidden;
+  resize: none;
+  width: 100%;
+}
+
+/* line 19, ../../../components/app/add-post/_add-post.scss */
+.post_break {
+  border: 1px #ddd solid;
+  color: #fff;
+  margin: 10px 0;
+}
+
+/* line 25, ../../../components/app/add-post/_add-post.scss */
+.post_file {
+  background: url("../img/1472748356_paperclip.svg") left no-repeat;
+  background-size: 2rem;
+  border: 0;
+  border-radius: 4px;
+  color: #888;
+  display: inline-block;
+  font-size: 1.6rem;
+  padding: 3px 3px 3px 25px;
+}
+/* line 35, ../../../components/app/add-post/_add-post.scss */
+.post_file:hover, .post_file:focus {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+/* line 42, ../../../components/app/add-post/_add-post.scss */
+.inputfile {
+  height: .1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  width: .1px;
+  z-index: -1;
+}
+
+/* line 51, ../../../components/app/add-post/_add-post.scss */
+.post_submit {
+  background-color: #0aa453;
+  border-radius: 4px;
+  color: #fff;
+  float: right;
+  padding: 2px 4px;
+}
+/* line 58, ../../../components/app/add-post/_add-post.scss */
+.post_submit:hover, .post_submit:focus {
+  background-color: #066a36;
+  cursor: pointer;
+}
+
+/* line 65, ../../../components/app/add-post/_add-post.scss */
+.post_file_upload {
+  background-image: url("../img/1472748322_image.svg") !important;
+}
+
+/* line 1, ../../../components/app/post/_post.scss */
+.post_avatar {
+  margin-right: 10px;
+  z-index: auto;
+}
+
+/* line 6, ../../../components/app/post/_post.scss */
+.post_paragraph {
+  color: #212121;
+  font-size: 1.6rem;
+  margin: 10px 0;
+}
+
+/* line 12, ../../../components/app/post/_post.scss */
+.post_header {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* line 17, ../../../components/app/post/_post.scss */
+.post_title {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+/* line 23, ../../../components/app/post/_post.scss */
+.post_date {
+  color: #888;
+  font-size: 1.4rem;
+}
+
+/* line 1, ../../../components/app/scroll-up/_scroll-up.scss */
+.scroll_up {
+  background: url("../img/ic_keyboard_arrow_up_white_24px.svg") no-repeat center;
+  background-color: #0aa453;
+  background-size: 34px;
+  border-radius: 50%;
+  bottom: 40px;
+  display: none;
+  height: 40px;
+  position: fixed;
+  right: 40px;
+  width: 40px;
+}
+/* line 13, ../../../components/app/scroll-up/_scroll-up.scss */
+.scroll_up:hover, .scroll_up:focus {
+  background-color: #066a36;
+  background-size: 38px;
+}
+
+/* line 1, ../../../components/app/teaser-friend/_teaser-friend.scss */
+.box_3 {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 0;
+  width: 32.2%;
+}
+/* line 7, ../../../components/app/teaser-friend/_teaser-friend.scss */
+.box_3:last-child {
+  margin-right: 0;
+}
+
+/* line 12, ../../../components/app/teaser-friend/_teaser-friend.scss */
+.avatar_holder {
+  background-color: #5480e6;
+  border-radius: 4px 4px 0 0;
+  height: 100px;
+  margin-bottom: 30px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+/* line 21, ../../../components/app/teaser-friend/_teaser-friend.scss */
+.avatar_holder .avatar {
+  bottom: -20px;
+  height: 100px;
+  left: 50%;
+  margin-left: -50px;
+  position: absolute;
+  width: 100px;
+  z-index: auto;
+}
+
+/* line 32, ../../../components/app/teaser-friend/_teaser-friend.scss */
+.member_info {
+  font-size: 1.4rem;
+  margin: 0;
+  padding: 0 10px 10px;
+  word-wrap: break-word;
+}
+
+/* line 1, ../../../components/app/teaser-album/_teaser-album.scss */
+.album_description {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+/* line 6, ../../../components/app/teaser-album/_teaser-album.scss */
+.album_row {
+  display: flex;
+  flex-direction: row;
+}
+/* line 10, ../../../components/app/teaser-album/_teaser-album.scss */
+.album_row a {
+  font-size: 0;
+  margin: 0 2.5px;
+  overflow: hidden;
+}
+
+/* line 17, ../../../components/app/teaser-album/_teaser-album.scss */
+.image_preview {
+  height: 190px;
+  transition: transform 0.3s ease-in-out;
+  vertical-align: left;
+  width: 190px;
+}
+/* line 23, ../../../components/app/teaser-album/_teaser-album.scss */
+.image_preview:hover {
+  transform: scale(1.05);
+}
+
+/* line 1, ../../../components/app/manifest/_manifest.scss */
+ol {
+  font-size: 1.8rem;
+}
+/* line 4, ../../../components/app/manifest/_manifest.scss */
+ol li {
+  margin-bottom: 5px;
+}
+
+/* line 1, ../../../components/app/clock/_clock.scss */
+.clock_wrapper {
+  display: table;
+  margin: 0 auto;
+}
+
+/* line 6, ../../../components/app/clock/_clock.scss */
+.clock {
+  background: #e6e6e6 url("../img/station_clock.svg") no-repeat center;
+  background-size: 91%;
+  border-radius: 50%;
+  height: 30em;
+  margin: 30px 10px 10px;
+  position: relative;
+  width: 30em;
+}
+/* line 15, ../../../components/app/clock/_clock.scss */
+.clock::after {
+  background: #ff6961;
+  border-radius: 50%;
+  content: '';
+  height: 5%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 5%;
+  z-index: 10;
+}
+
+/* line 29, ../../../components/app/clock/_clock.scss */
+.seconds {
+  background: #ff6961;
+  height: 45%;
+  left: 49.5%;
+  position: absolute;
+  top: 14%;
+  transform-origin: 50% 80%;
+  width: 1%;
+  z-index: 8;
+}
+
+/* line 40, ../../../components/app/clock/_clock.scss */
+.minutes {
+  background: #000;
+  height: 40%;
+  left: 49%;
+  position: absolute;
+  top: 10%;
+  transform-origin: 50% 100%;
+  width: 2%;
+}
+
+/* line 50, ../../../components/app/clock/_clock.scss */
+.hours {
+  background: #000;
+  height: 20%;
+  left: 48.75%;
+  position: absolute;
+  top: 30%;
+  transform-origin: 50% 100%;
+  width: 2.5%;
+}
+
+/* line 60, ../../../components/app/clock/_clock.scss */
+.seconds_container {
+  animation: rotate 60s infinite linear;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* line 69, ../../../components/app/clock/_clock.scss */
+.minutes_container,
+.hours_container {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* line 78, ../../../components/app/clock/_clock.scss */
+.minutes_container {
+  transform: rotate(216deg);
+}
+
+/* line 82, ../../../components/app/clock/_clock.scss */
+.hours_container {
+  transform: rotate(225deg);
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
 }
 
 /*# sourceMappingURL=gentklub.css.map */

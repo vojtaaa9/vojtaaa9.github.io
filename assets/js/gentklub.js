@@ -106,7 +106,7 @@ define('login',['jquery', 'jquery.exists'], function($, exists) {
       var user = Login.$input_user.val();
       var pass = Login.$input_pass.val();
       if(user == 'admin' && pass == '1234') {
-          window.location.href = '/main.html';
+          window.location.href = './main.html';
       } else {
         Login.$login_error.slideDown(300);
         Login.$input_pass.val('');
@@ -124,17 +124,17 @@ define('login',['jquery', 'jquery.exists'], function($, exists) {
 });
 
 /**
- * Handles interaction for Navigation
- * @module Navigation
+ * Handles interaction for Header
+ * @module Header
  * @requires jquery
  * @requires jquery.exists
  * @author pesek@webit.de
  */
-define('navigation',['jquery', 'jquery.exists'], function($, exists) {
+define('header',['jquery', 'jquery.exists'], function($, exists) {
 
   'use strict';
 
-  var Navigation = {
+  var Header = {
 
     /**
      * Caches all jQuery Objects for later use.
@@ -153,10 +153,10 @@ define('navigation',['jquery', 'jquery.exists'], function($, exists) {
      * @public
      */
     init: function() {
-      Navigation._cacheElements();
+      Header._cacheElements();
 
-      Navigation.$navigation.exists(function() {
-        Navigation._bindEvents();
+      Header.$navigation.exists(function() {
+        Header._bindEvents();
       });
     },
 
@@ -166,16 +166,167 @@ define('navigation',['jquery', 'jquery.exists'], function($, exists) {
      * @private
      */
     _bindEvents: function() {
-      Navigation.$moreOpen.on('click', function() {
-        Navigation.$moreMenu.fadeToggle();
+      Header.$moreOpen.on('click', function() {
+        Header.$moreMenu.fadeToggle();
       });
     }
 
   };
 
-  return /** @alias module:Navigation */ {
+  return /** @alias module:Header */ {
     /** init */
-    init: Navigation.init
+    init: Header.init
+  };
+
+});
+
+/**
+ * TODO: add description
+ * @module AddPost
+ * @requires jquery
+ * @requires jquery.exists
+ * @author TODO: add author
+ */
+define('add-post',['jquery', 'jquery.exists'], function($, exists) {
+
+  'use strict';
+
+  var AddPost = {
+
+    /**
+     * Caches all jQuery Objects for later use.
+     * @function _cacheElements
+     * @private
+     */
+    _cacheElements: function() {
+      this.$add_post = $('.add-post');
+    },
+
+    /**
+     * Initiates the module.
+     * @function init
+     * @public
+     */
+    init: function() {
+      AddPost._cacheElements();
+
+      AddPost._bindEvents();
+    },
+
+    /**
+     * Binds all events to jQuery DOM objects.
+     * @function _bindEvents
+     * @private
+     */
+    _bindEvents: function() {
+      // Show selected files
+      $('.inputfile').each( function() {
+    		var $input = $(this),
+    			$label = $input.next('label'),
+    			labelVal = $label.html();
+
+    		$input.on('change', function(e) {
+    			var fileName = '';
+
+    			if(this.files && this.files.length > 1)
+    				//TODO generate more labels
+            console.log('more files: ' + fileName);
+    			else if( e.target.value ) {
+            // Get fileName
+            fileName = e.target.value.split( '\\' ).pop();
+            $label.addClass('post_file_upload');
+            $label.text(fileName);
+          }
+    		});
+
+    		// Firefox bug fix
+    		$input
+    		.on( 'focus', function(){ $input.addClass( 'has-focus' ); })
+    		.on( 'blur', function(){ $input.removeClass( 'has-focus' ); });
+    	});
+    }
+
+  };
+
+  return /** @alias module:AddPost */ {
+    /** init */
+    init: AddPost.init
+  };
+
+});
+
+/**
+ * TODO: add description
+ * @module ScrollUp
+ * @requires jquery
+ * @requires jquery.exists
+ * @author TODO: add author
+ */
+define('scroll-up',['jquery', 'jquery.exists'], function($, exists) {
+
+  'use strict';
+
+  var ScrollUp = {
+
+    /**
+     * Caches all jQuery Objects for later use.
+     * @function _cacheElements
+     * @private
+     */
+    _cacheElements: function() {
+      this.$scroll_up = $('.scroll_up');
+    },
+
+    /**
+     * Initiates the module.
+     * @function init
+     * @public
+     */
+    init: function() {
+      ScrollUp._cacheElements();
+
+      ScrollUp._bindEvents();
+    },
+
+    /**
+     * Binds all events to jQuery DOM objects.
+     * @function _bindEvents
+     * @private
+     */
+    _bindEvents: function() {
+
+      $.fn.scrollEnd = function(callback, timeout) {
+        $(this).scroll(function(){
+          var $this = $(this);
+          if ($this.data('scrollTimeout')) {
+            clearTimeout($this.data('scrollTimeout'));
+          }
+          $this.data('scrollTimeout', setTimeout(callback,timeout));
+        });
+      };
+      
+      // Takes care of Scrolling back to top
+      $(window).scrollEnd(function(){
+
+        if ($(this).scrollTop() > 100) {
+          ScrollUp.$scroll_up.show();
+        } else {
+          ScrollUp.$scroll_up.hide();
+        }
+      }, 250);
+
+      ScrollUp.$scroll_up.click(function () {
+        $('html, body').animate({scrollTop: 0}, 500);
+        return false;
+      });
+
+    }
+
+  };
+
+  return /** @alias module:ScrollUp */ {
+    /** init */
+    init: ScrollUp.init
   };
 
 });
@@ -192,12 +343,16 @@ require([
   'jquery',
   'jquery.exists',
   'login',
-  'navigation'
+  'header',
+  'add-post',
+  'scroll-up'
 ], function(
   $,
   exists,
   Login,
-  Navigation
+  Header,
+  AddPost,
+  ScrollUp
 ) {
 
   'use strict';
@@ -219,7 +374,9 @@ require([
     init: function() {
       this.cacheElements();
       Login.init();
-      Navigation.init();
+      Header.init();
+      AddPost.init();
+      ScrollUp.init();
     }
   };
 
@@ -234,8 +391,10 @@ requirejs.config({
 	'baseUrl': './',
 	'paths': {
 		//{{app}}
+    'scroll-up': 'app/scroll-up/scroll-up',
+    'add-post': 'app/add-post/add-post',
     'login': 'app/login/login',
-    'navigation': 'app/navigation/navigation',
+    'header': 'app/header/header',
     'content': 'app/content/content',
 
 		//{{libs}}
