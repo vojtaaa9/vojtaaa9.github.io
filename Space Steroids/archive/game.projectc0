@@ -1,0 +1,33 @@
+[project]
+title = Space Steroids
+version = 0.8
+
+[bootstrap]
+main_collection = /loader/loading.collectionc
+render = /render/custom_render.renderc
+
+[input]
+game_binding = /input/game.input_bindingc
+
+[display]
+width = 1080
+height = 1920
+high_dpi = 1
+fullscreen = 0
+
+[physics]
+scale = 0.02
+gravity_y = 0
+
+[script]
+shared_state = 1
+
+[graphics]
+default_texture_min_filter = linear
+default_texture_mag_filter = nearest
+
+[android]
+package = com.fetagamestudio.spacesteroids
+app_icon_192x192 = /loader/images/icon.png
+immersive_mode = 1
+
