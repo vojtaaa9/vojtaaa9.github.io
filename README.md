@@ -1,10 +1,3 @@
-# 7:36 Gentleman's Klub
+# Portfolio Vojtěch Pešek  
 
-This project contains frontend files for 7:36 Gentleman's Klub Website
-
-It's something like private Facebook Group containing:
-* photos,
-* events,
-* members,
-* manifest,
-* and many more...
+Just visit my [portfolio site](https://vojtaaa9.github.io/) to discover more. :)
