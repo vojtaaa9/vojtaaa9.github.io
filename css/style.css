@@ -1,0 +1,82 @@
+@import "normalize.css";
+@import "blanka.css";
+
+html {
+    background: rgb(2,0,37);
+    background: linear-gradient(30deg, rgba(2,0,37,1) 0%, rgba(9,9,121,1) 22%, rgba(0,212,255,1) 100%);
+    color: snow;
+    font-family: 'Karma', serif;
+    font-size: 125%;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-size: calc(0.5vw + 0.9em);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+a {
+    color: inherit;
+    text-decoration-style: double;
+    text-decoration-color: #04e762;
+    word-wrap: break-word;
+}
+
+a:visited {
+    text-decoration-color: #e7cc04;
+}
+
+a:hover {
+    text-decoration-style: solid;
+}
+
+h1 {
+    font-size: calc(4vw + 1rem) ;
+    margin-top: calc(4vw + 1rem);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.links {
+    width: 100%;
+}
+
+.links ul {
+    padding: 0;
+}
+
+.links ul li {
+    display: inline;
+    padding: 1em;
+}
+
+.unstyled-list {
+    list-style: none;
+}
+
+.well {
+    margin: 0 auto;
+    max-width: 20em;
+    width: 100%; 
+}
+
+.margin-top-default {
+    margin-top: 1rem;
+}
+
+.margin-top-double {
+    margin-top: calc(5vw + 1rem);
+}
+
+ul li {
+    padding-bottom: 0.3em;
+}
