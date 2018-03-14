@@ -8,11 +8,18 @@ html {
     font-family: 'Karma', serif;
     font-size: 125%;
     height: 100%;
+    overflow: hidden;
     width: 100%;
 }
 
 body {
     font-size: calc(0.5vw + 0.9em);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -25,6 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
     color: inherit;
     text-decoration-color: #04e762;
+    overflow-wrap: break-word;
     word-wrap: break-word;
 }
 
@@ -103,5 +111,6 @@ footer span {
     color: lightgrey;
     display: block;
     font-size: 0.75rem;
+    margin-bottom: 0.5rem;
     margin-top: 3rem;
 }
