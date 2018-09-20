@@ -1,0 +1,80 @@
+@font-face {
+    font-family: "Mountains of Christmas";
+    src: url('fonts/MountainsofChristmas-Regular.ttf');
+}
+
+.well {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.well a {
+  color: white;
+  text-decoration: none;
+  padding: 40px;
+  display: block;
+  text-align: center;
+  font-size: 3rem;
+}
+
+html {
+    min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: "Mountains of Christmas", cursive;
+  position: relative;
+  min-height: inherit;
+}
+body::after {
+  content: "";
+  background: url('img/2015-Christmas-background-tumblr-1.jpg');
+  background-attachment: fixed;
+  opacity: 0.5;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+h1 {
+  margin: 0 10px;
+  padding: 1.5rem 0;
+  text-shadow: 1px 1px 2px #555;
+}
+
+.view {
+  width: 100%;
+  max-width: 300px;
+  background-color: #CE1421;
+  border-radius: 4px;
+  transition: all 0.5s;
+  display: inline-block;
+  margin: 8px;
+  padding: 0;
+}
+.view:hover {
+  background-color: #a7111b;
+}
+
+.extra {
+  background-color: #426223;
+}
+.extra:hover {
+  background-color: #30471a;
+}
+
+.disabled {
+  background-color: #333 !important;
+}
+
+.no-winter {
+    text-align: center;
+    padding: 0.2em 1em;
+    font-size: 3rem;
+    background-color: #FFFC;
+    margin: 0 0.5em;
+}
